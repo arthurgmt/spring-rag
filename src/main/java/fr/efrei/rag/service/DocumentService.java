@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import fr.efrei.rag.repository.DocumentRepository;
 import fr.efrei.rag.domain.Document;
 import java.util.Optional;
+import java.util.List;
 
 @Service
 public class DocumentService {
@@ -20,4 +21,14 @@ public class DocumentService {
     public Optional<Document> findById(Long id) {
         return documentRepository.findById(id);
     }
+
+    public void deleteById(Long id) {
+        documentRepository.deleteById(id);
+    }
+
+    public List<Document> findAll() {
+        return documentRepository.findAll();
+    }
+
+
 }
